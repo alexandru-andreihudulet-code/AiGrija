@@ -1,0 +1,142 @@
+html{
+    scroll-behavior: smooth!important;
+}
+body {
+    font-family: Arial, sans-serif;
+    background: url("images/poza_album.jpg");
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #0000003b;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    color: whitesmoke;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+.album {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.track {
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    background-color: #2929299e;
+    transition: background-color 0.3s ease;
+}
+
+.track.selected{
+    background-color: #1d1c1c;
+}
+
+.track:hover {
+    background-color: #393939;
+}
+
+#player {
+    margin-top: 20px;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 2rem;
+}
+
+nav a{
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.credits-titles {
+    margin-right: 0.5rem;
+    font-weight: 800;
+}
+
+
+.player-wrapper {
+    width: 100%;
+}
+
+.player-wrapper>input[type="range"]{
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    margin-bottom: 2rem;
+}
+
+/***** Track Styles *****/
+/***** Chrome, Safari, Opera, and Edge Chromium *****/
+.player-wrapper input[type="range"]::-webkit-slider-runnable-track {
+    height: 8px;
+    background: rgba(255, 255, 255, 0.245);
+}
+
+/******** Firefox ********/
+.player-wrapper input[type="range"]::-moz-range-track {
+    height: 8px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.245);
+}
+
+/***** Thumb Styles *****/
+/***** Chrome, Safari, Opera, and Edge Chromium *****/
+.player-wrapper input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    margin-top: -0.4rem;
+    background: white;
+    border-radius: 100%;
+    height: 20px;
+    width: 20px;
+    
+}
+
+/***** Thumb Styles *****/
+/***** Firefox *****/
+.player-wrapper input[type="range"]::-moz-range-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    margin-top: -0.5rem; /* Centers thumb on the track */
+    background-color: white;
+}
+
+.player-wrapper button {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    cursor: pointer;
+}
+
+.player-wrapper .player-wrapper-controls-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.player-wrapper-controls-container button.active{
+    color: #ff2121;
+}

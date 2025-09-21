@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album Audio</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Noul nume al fișierului CSS -->
+</head>
+
+<body>
+    <nav>
+        <a href="#playerContainer">Player</a>
+        <a href="#aboutContainer">About</a>
+        <a href="#creditsAlbumContainer">Credits</a>
+    </nav>
+    <div class="container" id="playerContainer">
+        <h2>Călinacho - Ai grijă </h2>
+        <div id="player">
+            <audio autoplay></audio>
+            <div class="player-wrapper">
+                <input type="range" step="0.1"/>
+                <div class="player-wrapper-controls-container">
+                    <button data-name="player-random">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="2rem" width="2rem" xmlns="http://www.w3.org/2000/svg"><path d="M504.971 359.029c9.373 9.373 9.373 24.569 0 33.941l-80 79.984c-15.01 15.01-40.971 4.49-40.971-16.971V416h-58.785a12.004 12.004 0 0 1-8.773-3.812l-70.556-75.596 53.333-57.143L352 336h32v-39.981c0-21.438 25.943-31.998 40.971-16.971l80 79.981zM12 176h84l52.781 56.551 53.333-57.143-70.556-75.596A11.999 11.999 0 0 0 122.785 96H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12zm372 0v39.984c0 21.46 25.961 31.98 40.971 16.971l80-79.984c9.373-9.373 9.373-24.569 0-33.941l-80-79.981C409.943 24.021 384 34.582 384 56.019V96h-58.785a12.004 12.004 0 0 0-8.773 3.812L96 336H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h110.785c3.326 0 6.503-1.381 8.773-3.812L352 176h32z"></path></svg>
+                    </button>
+                    <button data-name="player-prev">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="2rem" width="2rem" xmlns="http://www.w3.org/2000/svg" style=""><path d="M8.445 14.832A1 1 0 0010 14v-2.798l5.445 3.63A1 1 0 0017 14V6a1 1 0 00-1.555-.832L10 8.798V6a1 1 0 00-1.555-.832l-6 4a1 1 0 000 1.664l6 4z"></path></svg>
+                    </button>
+                    <button data-name="player-play-pause">
+                        <svg id="playIcon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="4rem" width="4rem" xmlns="http://www.w3.org/2000/svg"><path d="M371.7 238l-176-107c-15.8-8.8-35.7 2.5-35.7 21v208c0 18.4 19.8 29.8 35.7 21l176-101c16.4-9.1 16.4-32.8 0-42zM504 256C504 119 393 8 256 8S8 119 8 256s111 248 248 248 248-111 248-248zm-448 0c0-110.5 89.5-200 200-200s200 89.5 200 200-89.5 200-200 200S56 366.5 56 256z"></path></svg>
+                        <svg id="pauseIcon" style="display: none;" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="4rem" width="4rem" xmlns="http://www.w3.org/2000/svg"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm96-280v160c0 8.8-7.2 16-16 16h-48c-8.8 0-16-7.2-16-16V176c0-8.8 7.2-16 16-16h48c8.8 0 16 7.2 16 16zm-112 0v160c0 8.8-7.2 16-16 16h-48c-8.8 0-16-7.2-16-16V176c0-8.8 7.2-16 16-16h48c8.8 0 16 7.2 16 16z"></path></svg>                  
+                    </button>
+                    <button data-name="player-next">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="2rem" width="2rem" xmlns="http://www.w3.org/2000/svg"><path d="M4.555 5.168A1 1 0 003 6v8a1 1 0 001.555.832L10 11.202V14a1 1 0 001.555.832l6-4a1 1 0 000-1.664l-6-4A1 1 0 0010 6v2.798l-5.445-3.63z"></path></svg>
+                    </button>
+                    <button data-name="player-loop">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" version="1.1" viewBox="0 0 16 16" height="2rem" width="2rem" xmlns="http://www.w3.org/2000/svg"><path d="M2 5h10v3l4-4-4-4v3h-12v6h2zM14 11h-10v-3l-4 4 4 4v-3h12v-6h-2z"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="album" data-name="playlist">
+            <div class="track" data-video-file="cu_drag_calin.mp4">Cu Drag, Călin</div>
+            <div class="track" data-video-file="lanterna.mp4">Lanternă</div>
+            <div class="track" data-video-file="n-o_sa_plec.mp4">N-o să Plec</div>
+            <div class="track" data-video-file="On_The_Low.mp4">On The Low</div>
+            <div class="track" data-video-file="Fatherless_Behaviour.mp4">Fatherless Behaviour</div>
+            <div class="track" data-video-file="On_&_On.mp4">On & On</div>
+            <div class="track" data-video-file="Uite_Scrisoarea.mp4">Uite Scrisoarea</div>
+            <div class="track" data-video-file="Dezamăgit.mp4">Dezamăgit</div>
+            <div class="track" data-video-file="Un_Nou_Început.mp4">Un Nou Început</div>
+            <div class="track" data-video-file="Nepotrivit.mp4">Nepotrivit</div>
+            <div class="track" data-video-file="Euforia.mp4">Euforia</div>
+            <div class="track" data-video-file="Fantasy.mp4">Fantasy</div>
+            <div class="track" data-video-file="Spațiu_Timp.mp4">Spațiu/Timp</div>
+            <div class="track" data-video-file="Club_Lights.mp4">Club Lights</div>
+            <div class="track" data-video-file="2AM_în_Floreasca.mp4">2AM în Floreasca</div>
+            <div class="track" data-video-file="Ai_Grijă.mp4">Ai Grijă</div>
+        </div>
+    </div>
+    <div class="container" id="aboutContainer">
+        <h2>About</h2>
+        Ai Grijă este al patrulea album de studio al lui Călinacho. Lansat pe data de 7 Iunie 2024, la 1 an și 6 luni de
+        la ultimul său album, într-o bună zi o să fim bine.
+
+        Albumul a fost menționat prima oară printr-o postare pe contul său de instagram, împreuna cu un snippet din
+        piesa On & On si un snippet din piesa N-o să plec. Pe 10 Decembrie 2023, continuă să dea tease fanilor printr-un
+        snippet nou al piesei On The Low.
+
+        Pe 7 Aprilie 2024, de ziua sa de naștere, Călinacho oferă un posibil release date pentru următoarea lună, pe
+        care, posibil din probleme tehnice, nu-l respectă.
+
+        Pe 23 Mai 2024, revine cu o postare care alcătuiește tracklist-ul și un nou release date, acela fiind
+        14/06/2024. Printr-un story, acum șters, artistul își exprimă dorința de a lansa albumul mai devreme daca se
+        poate, așa că, la câteva zile, revine cu o postare în care anunță un listening party pe data de 6 Iunie 2024. O
+        experiență unică, însoțită de visualizere.
+
+        La finalul listening party-ului, Călinacho postează pe contul său de instagram cum că albumul se va lansa la
+        00:00, 7 Iunie 2024.
+
+        Feat-urile albumului sunt: Ștefan Costea, Mario Fresh, Alex Bittman, iar ghosty punk și Pitariu George, pe
+        partea de producție.
+
+        Numele albumului este inspirat și tradus după Take Care, al doilea album de studio al lui Drake, artistul
+        preferat al lui Călinacho.
+
+        Călinacho anunță că odata cu lansarea acestui album, a încheiat o trilogie a albumelor sale.
+        <script src="player.js"></script>
+    </div>
+    <div class="container" id="creditsAlbumContainer">
+        <p><span class="credits-titles">Artwork</span> Nepvl, Tugay Tavukçu & Alexandru Ghiulea</p>
+        <p><span class="credits-titles">Labelnobody</span> nothing</p>
+        <p><span class="credits-titles">Phonographic Copyright</span> ℗nobody: nothing</p>
+        <p><span class="credits-titles">Copyright</span> ©nobody: nothing</p>
+    </div>
+    <div class="container" id="creditsMusicContainer">
+        <p><span class="credits-titles">Primary Artists</span>Călinacho, Călinacho & Alex Bittman, Călinacho & ghosty
+            punk & 4 more</p>
+        <p><span class="credits-titles">Producers</span>Alexandru Ghiulea, Alex Bittman, Amtilb & 8 more</p>
+        <p><span class="credits-titles"></span>WritersAlex Bittman, Călinacho, ghosty punk & 2 more</p>
+        <p><span class="credits-titles">Additional Vocals</span>Dan Bittman & ghosty punk</p>
+        <p><span class="credits-titles">Artwork</span>Alexandru Ghiulea, Nepvl & Tugay Tavukçu</p>
+        <p><span class="credits-titles">Composer</span>Alex Bittman, Călinacho, ghosty punk & 2 more</p>
+        <p><span class="credits-titles">Copyright</span> ©nobody: nothing</p>
+        <p><span class="credits-titles">Label</span>nobody: nothing</p>
+        <p><span class="credits-titles">Lyricist</span>Alex Bittman, Călinacho, ghosty punk & 2 more</p>
+        <p><span class="credits-titles">Mastering Engineer</span>Paul Iorga</p>
+        <p><span class="credits-titles">Mixing Engineer</span>Paul Iorga</p>
+        <p><span class="credits-titles">Phonographic Copyright</span> ℗nobody: nothing</p>
+        <p><span class="credits-titles">Primary Artists</span>Alex Bittman, Călinacho, ghosty punk & 3 more</p>
+        <p><span class="credits-titles">Saxophone</span>P Bitt</p>
+        <p><span class="credits-titles">Video Director</span>Matei Olteanu</p>
+        <p><span class="credits-titles">Video Director Of Photography</span>Radu Siffredi</p>
+        <p><span class="credits-titles">Video Editor</span>Alexandru Rad & Matei Olteanu</p>
+        <p><span class="credits-titles">Video Producer</span>Alexandru Ghiulea</p>
+        <p><span class="credits-titles">Video Production Designer</span>Alexandru Ghiulea, Călinacho & Matei Olteanu</p>
+        <p><span class="credits-titles">Video VFX Artist</span>Alexandru Rad</p>
+    </div>
+</body>
+
+</html>
